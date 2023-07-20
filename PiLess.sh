@@ -203,7 +203,7 @@ echo "$NEW_CMDLINE" > "${BOOTFS}/cmdline.txt"
 
 echo
 echo "# Determining image size..."
-IMG_SIZE=`"$FDISK" -d /dev/disk9 | /usr/bin/head -2 | /usr/bin/tail -1 | /usr/bin/cut -f1,2 -d, | /usr/bin/sed "s/,/ + /" | /usr/bin/bc -l`
+IMG_SIZE=`"$FDISK" -d "$DISK" | /usr/bin/head -2 | /usr/bin/tail -1 | /usr/bin/cut -f1,2 -d, | /usr/bin/sed "s/,/ + /" | /usr/bin/bc -l`
 echo "Image Size (512 byte blocks): $IMG_SIZE"
 
 
